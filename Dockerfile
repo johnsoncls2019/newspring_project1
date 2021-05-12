@@ -10,7 +10,7 @@ RUN mvn -f /home/mchrist1/AchiStarTechnologies/newspring_project1/pom.xml clean 
 # Package stage
 #
 FROM openjdk:11-jre-slim
-COPY --from=build /home/app/target/demo-0.0.1-SNAPSHOT.war /usr/local/lib/demo.war
+COPY --from=build /home/app/target/demo-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
 EXPOSE 5000
-ENTRYPOINT ["java","-jar","/usr/local/lib/demo.war"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar"]
 
